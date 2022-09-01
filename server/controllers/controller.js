@@ -48,7 +48,7 @@ exports.create = (req, res) => {
     catch_phrase = catch_phrase.replace(/['"]+/g, "`");
     if (name === '' || real === '' || !req.file) {
         return res.status(200).json({
-            message: "Заповніть усі поля та виберіть файл потрібного форматуі"
+            message: "Заповніть усі поля"
         })
     }
     db.query(`SELECT * FROM superhero WHERE real_name = '${real}'`, (error, result) => {
